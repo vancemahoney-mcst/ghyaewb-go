@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v5.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#FPArithmetic" name="4"/>
+  <lib desc="#Memory" name="5"/>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#TTL" name="7"/>
+  <lib desc="#TCL" name="8"/>
+  <lib desc="#Base" name="9"/>
+  <lib desc="#BFH-Praktika" name="10"/>
+  <lib desc="#Input/Output-Extra" name="11"/>
+  <lib desc="#Soc" name="12"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool map="Button2" name="Poke Tool"/>
+    <tool map="Button3" name="Menu Tool"/>
+    <tool map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool name="Poke Tool"/>
+    <tool name="Edit Tool"/>
+    <tool name="Wiring Tool"/>
+    <tool name="Text Tool"/>
+    <tool name="Image"/>
+    <sep/>
+    <tool name="Pin"/>
+    <tool name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <sep/>
+    <tool name="NOT Gate"/>
+    <tool name="AND Gate"/>
+    <tool name="OR Gate"/>
+    <tool name="XOR Gate"/>
+    <tool name="NAND Gate"/>
+    <tool name="NOR Gate"/>
+    <sep/>
+    <tool name="D Flip-Flop"/>
+    <tool name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="main"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp loc="(720,210)" name="Memory"/>
+  </circuit>
+  <circuit name="ALU">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="ALU"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(200,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Op"/>
+    </comp>
+    <comp lib="0" loc="(220,190)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="D"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(250,210)" name="Ground">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(300,180)" name="Power"/>
+    <comp lib="0" loc="(300,240)" name="Power"/>
+    <comp lib="0" loc="(470,230)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q"/>
+      <a name="type" val="output"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="2" loc="(400,230)" name="Multiplexer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="3" loc="(320,200)" name="Adder"/>
+    <comp lib="3" loc="(320,260)" name="Subtractor"/>
+    <wire from="(200,240)" to="(200,310)"/>
+    <wire from="(200,310)" to="(380,310)"/>
+    <wire from="(220,190)" to="(260,190)"/>
+    <wire from="(250,210)" to="(270,210)"/>
+    <wire from="(260,190)" to="(260,250)"/>
+    <wire from="(260,190)" to="(280,190)"/>
+    <wire from="(260,250)" to="(280,250)"/>
+    <wire from="(270,210)" to="(270,270)"/>
+    <wire from="(270,210)" to="(280,210)"/>
+    <wire from="(270,270)" to="(280,270)"/>
+    <wire from="(320,200)" to="(340,200)"/>
+    <wire from="(320,260)" to="(340,260)"/>
+    <wire from="(340,200)" to="(340,220)"/>
+    <wire from="(340,220)" to="(370,220)"/>
+    <wire from="(340,240)" to="(340,260)"/>
+    <wire from="(340,240)" to="(370,240)"/>
+    <wire from="(380,250)" to="(380,310)"/>
+    <wire from="(400,230)" to="(470,230)"/>
+  </circuit>
+  <circuit name="Memory">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Memory"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(110,380)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Op"/>
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(110,380)" name="Splitter"/>
+    <comp lib="0" loc="(110,420)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Clk"/>
+    </comp>
+    <comp lib="0" loc="(610,590)" name="Power">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(980,620)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Q"/>
+      <a name="type" val="output"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(210,380)" name="NOT Gate"/>
+    <comp lib="1" loc="(650,580)" name="NOT Gate"/>
+    <comp lib="5" loc="(270,330)" name="Counter">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="showInTab" val="true"/>
+    </comp>
+    <comp lib="5" loc="(650,530)" name="RAM">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(490,620)" name="ALU"/>
+    <wire from="(110,420)" to="(110,690)"/>
+    <wire from="(110,420)" to="(260,420)"/>
+    <wire from="(110,690)" to="(510,690)"/>
+    <wire from="(130,360)" to="(180,360)"/>
+    <wire from="(130,370)" to="(130,400)"/>
+    <wire from="(130,400)" to="(240,400)"/>
+    <wire from="(180,360)" to="(180,380)"/>
+    <wire from="(180,380)" to="(180,640)"/>
+    <wire from="(180,640)" to="(270,640)"/>
+    <wire from="(210,380)" to="(270,380)"/>
+    <wire from="(240,400)" to="(240,600)"/>
+    <wire from="(240,400)" to="(270,400)"/>
+    <wire from="(240,600)" to="(470,600)"/>
+    <wire from="(260,410)" to="(260,420)"/>
+    <wire from="(260,410)" to="(270,410)"/>
+    <wire from="(260,620)" to="(260,790)"/>
+    <wire from="(260,620)" to="(270,620)"/>
+    <wire from="(260,790)" to="(910,790)"/>
+    <wire from="(460,440)" to="(640,440)"/>
+    <wire from="(470,580)" to="(470,600)"/>
+    <wire from="(470,580)" to="(620,580)"/>
+    <wire from="(490,620)" to="(650,620)"/>
+    <wire from="(510,600)" to="(510,690)"/>
+    <wire from="(510,600)" to="(650,600)"/>
+    <wire from="(610,590)" to="(650,590)"/>
+    <wire from="(640,440)" to="(640,540)"/>
+    <wire from="(640,540)" to="(650,540)"/>
+    <wire from="(890,620)" to="(910,620)"/>
+    <wire from="(910,620)" to="(910,790)"/>
+    <wire from="(910,620)" to="(980,620)"/>
+  </circuit>
+  <circuit name="Program">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Program"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(730,350)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="3"/>
+    </comp>
+    <comp lib="1" loc="(650,350)" name="PLA">
+      <a name="in_width" val="4"/>
+      <a name="out_width" val="3"/>
+      <a name="table">0001 000 # +
+0010 000 # -
+0011 000 # &lt;
+0100 000 # &gt;
+0101 000 # ,
+0110 000 # .
+0111 000 # @
+1000 000 # !
+1111 000 # HALT
+</a>
+    </comp>
+    <comp lib="5" loc="(340,300)" name="Counter">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="5" loc="(360,290)" name="ROM">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="contents">addr/data: 8 4
+0
+</a>
+      <a name="dataWidth" val="4"/>
+    </comp>
+    <wire from="(340,300)" to="(360,300)"/>
+    <wire from="(600,350)" to="(650,350)"/>
+    <wire from="(700,350)" to="(730,350)"/>
+  </circuit>
+</project>
